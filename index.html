@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#060b18">
+
+<!-- ═══ SEO básico ═══ -->
+<title>Jhonn Campos Garcia — Consultor en Automatización y Datos</title>
+<meta name="description" content="Soy Jhonn Campos, consultor en automatización y datos. Convierto procesos manuales en sistemas que trabajan solos: Python, bases de datos y APIs para operar más rápido y con menos errores.">
+<!-- TODO cuando tengas dominio: descomentar y completar -->
+<!-- <link rel="canonical" href="https://TU-DOMINIO.com/"> -->
+
+<!-- ═══ Open Graph (LinkedIn, WhatsApp, Facebook) ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Jhonn Campos Garcia — Consultor en Automatización y Datos">
+<meta property="og:description" content="Convierto procesos manuales en sistemas que trabajan solos. Python, bases de datos y APIs para operar más rápido y con menos errores.">
+<!-- TODO: cuando tengas dominio, sube un recorte 1200x630 de foto-perfil.jpg y completa:
+<meta property="og:url" content="https://TU-DOMINIO.com/">
+<meta property="og:image" content="https://TU-DOMINIO.com/og.jpg">
+-->
+
+<!-- ═══ Twitter Cards ═══ -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jhonn Campos Garcia — Consultor en Automatización y Datos">
+<meta name="twitter:description" content="Convierto procesos manuales en sistemas que trabajan solos. Python, bases de datos y APIs para operar más rápido y con menos errores.">
+
+<!-- ═══ Datos estructurados ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jhonn Phool Campos Garcia",
+  "jobTitle": "Consultor en Automatización y Datos",
+  "description": "Convierto procesos manuales en sistemas que trabajan solos. Soluciones con Python, bases de datos y APIs.",
+  "telephone": "+51957798468",
+  "url": "https://wa.me/51957798468",
+  "knowsAbout": ["Python", "SQL", "APIs", "ETL", "Web scraping", "Linux", "Ciberseguridad"],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización de procesos y reportes" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Extracción de datos web (web scraping)" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bases de datos: diseño, consultas y optimización SQL" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integración de sistemas y APIs" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tratamiento y consolidación de datos (ETL)" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mentoría 1-a-1 en Python y automatización" } }
+  ]
+}
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   DISEÑO FINAL — combinación elegida por Jhonn:
+   · Hero editorial: titular gigante a la izquierda, foto a sangre
+     con duotono azul ocupando la mitad derecha de la pantalla.
+   · Del bloque de servicios hacia abajo: estética B2B premium
+     (tarjetas con iconos y borde luminoso, botones pill degradados,
+     burbuja de chat en el CTA final).
+   Técnica: CSS a mano sin frameworks, fuentes del sistema, cero
+   peticiones externas. El verde queda reservado para WhatsApp.
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  --bg:      #060b18;
+  --card-a:  rgba(255,255,255,0.045);
+  --card-b:  rgba(255,255,255,0.012);
+  --line:    rgba(255,255,255,0.09);
+  --blue:    #3b82f6;
+  --sky:     #38bdf8;
+  --cyan:    #22d3ee;
+  --wa:      #25D366;
+  --text:    #cbd5e1;
+  --muted:   #8fa3bf;
+  --heading: #f8fafc;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Code", Consolas, "SF Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: var(--sans); line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Aurora azul suave tras el hero */
+body::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 720px;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 45% at 30% -8%, rgba(59,130,246,0.2), transparent 70%),
+    radial-gradient(ellipse 35% 30% at 8% 14%, rgba(34,211,238,0.08), transparent 70%);
+}
+
+h1, h2, h3 { color: var(--heading); letter-spacing: -0.03em; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 6px; }
+
+.container { position: relative; z-index: 1; max-width: 72rem; margin-inline: auto; padding-inline: 1.25rem; }
+@media (min-width: 640px) { .container { padding-inline: 2rem; } }
+
+.skip-link { position: absolute; left: -999px; top: 0; z-index: 100; background: var(--sky); color: #04121f; padding: 0.6rem 1rem; font-weight: 700; text-decoration: none; }
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+/* ─── Botones pill ─── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.65rem;
+  font-weight: 600; font-size: 0.97rem; text-decoration: none;
+  border-radius: 999px; padding: 0.9rem 1.7rem;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s, background-color 0.25s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  color: #fff;
+  box-shadow: 0 12px 32px -10px rgba(37,99,235,0.55);
+}
+.btn-primary:hover { box-shadow: 0 16px 40px -10px rgba(34,211,238,0.55); transform: translateY(-1px); }
+.btn-ghost { border: 1px solid var(--line); color: var(--muted); }
+.btn-ghost:hover { border-color: rgba(56,189,248,0.5); color: var(--heading); }
+
+/* ─── Header ─── */
+.site-header {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(6,11,24,0.75); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; height: 4.25rem; }
+.brand { font-weight: 700; font-size: 1.02rem; color: var(--heading); text-decoration: none; letter-spacing: -0.02em; }
+.site-nav { display: flex; align-items: center; gap: 1.6rem; font-size: 0.9rem; }
+.nav-link { display: none; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover { color: var(--heading); }
+@media (min-width: 640px) { .nav-link { display: inline; } }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, #2563eb, #06b6d4); color: #fff;
+  text-decoration: none; font-weight: 600; font-size: 0.86rem;
+  padding: 0.55rem 1.1rem; border-radius: 999px;
+}
+
+/* ─── Hero editorial: texto | foto, contenido en el contenedor
+   centrado como en la opción 3 (la foto no toca el borde del navegador) ─── */
+.hero { border-bottom: 1px solid rgba(255,255,255,0.06); }
+.hero-grid { display: grid; padding-inline: 0; }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; } }
+
+.hero-copy {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 4rem 1.25rem;
+}
+@media (min-width: 640px) { .hero-copy { padding: 5.5rem 2rem; } }
+@media (min-width: 900px) { .hero-copy { padding-right: 4rem; } }
+
+.kicker {
+  font-family: var(--mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--sky);
+}
+.hero h1 {
+  margin-top: 1.5rem;
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  line-height: 1.05; font-weight: 700;
+}
+.hero h1 .accent {
+  background: linear-gradient(100deg, #60a5fa, #22d3ee);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .subtitle { margin-top: 2rem; max-width: 34rem; font-size: clamp(1.05rem, 1.8vw, 1.18rem); color: var(--muted); }
+.hero .actions { margin-top: 2.6rem; display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
+.stack { margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; list-style: none; }
+.stack li {
+  font-size: 0.82rem; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 0.34rem 0.9rem;
+  background: rgba(255,255,255,0.02);
+}
+
+/* Foto a sangre con duotono azul */
+.hero-photo { position: relative; min-height: 20rem; }
+.hero-photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  filter: saturate(0.85) contrast(1.05);
+}
+.hero-photo::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(to right, var(--bg), transparent 38%),
+    linear-gradient(to top, rgba(6,11,24,0.5), transparent 45%),
+    rgba(37,99,235,0.12);
+}
+@media (max-width: 899px) {
+  .hero-photo { min-height: 24rem; }
+  .hero-photo::after {
+    background:
+      linear-gradient(to bottom, var(--bg), transparent 32%),
+      rgba(37,99,235,0.12);
+  }
+}
+
+/* ─── Secciones ─── */
+.section { padding-block: 5.5rem; }
+@media (min-width: 640px) { .section { padding-block: 7rem; } }
+.section-head { max-width: 40rem; margin-bottom: 3.2rem; }
+.eyebrow { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: var(--cyan); }
+.section-head h2 { margin-top: 0.8rem; font-size: clamp(1.7rem, 3.5vw, 2.3rem); font-weight: 700; }
+
+/* ─── Servicios: tarjetas con degradado y borde luminoso ─── */
+.services { display: grid; gap: 1.25rem; }
+@media (min-width: 640px)  { .services { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .services { grid-template-columns: repeat(3, 1fr); } }
+
+.service {
+  background: linear-gradient(180deg, var(--card-a), var(--card-b));
+  border: 1px solid var(--line); border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.service:hover {
+  transform: translateY(-3px);
+  border-color: rgba(56,189,248,0.45);
+  box-shadow: 0 20px 48px -20px rgba(37,99,235,0.35);
+}
+.icon-chip {
+  display: flex; align-items: center; justify-content: center;
+  width: 2.75rem; height: 2.75rem; border-radius: 0.7rem;
+  background: rgba(56,189,248,0.12); color: var(--sky);
+}
+.service h3 { margin-top: 1.2rem; font-size: 1.12rem; font-weight: 650; line-height: 1.4; letter-spacing: -0.01em; }
+.service p { margin-top: 0.65rem; font-size: 0.95rem; color: var(--muted); }
+
+/* CTA intermedio */
+.mid-cta {
+  margin-top: 2.75rem; display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 1.2rem;
+  background: linear-gradient(180deg, var(--card-a), var(--card-b));
+  border: 1px solid var(--line); border-radius: 1rem; padding: 1.6rem 2rem;
+}
+.mid-cta p { font-size: 1rem; color: var(--text); font-weight: 500; }
+.mid-cta a { font-weight: 700; font-size: 0.95rem; color: var(--sky); text-decoration: none; white-space: nowrap; }
+.mid-cta a:hover { text-decoration: underline; }
+
+/* ─── Casos ─── */
+.cases { display: grid; gap: 1.5rem; }
+@media (min-width: 1024px) { .cases { grid-template-columns: 1fr 1fr; } }
+.case {
+  background: linear-gradient(180deg, var(--card-a), var(--card-b));
+  border: 1px solid var(--line); border-radius: 1rem; padding: 2.2rem;
+  display: flex; flex-direction: column;
+}
+.case h3 { font-size: 1.28rem; font-weight: 650; line-height: 1.4; letter-spacing: -0.015em; }
+.case dl { margin-top: 1.6rem; display: grid; gap: 1.15rem; flex: 1; }
+.case dt { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); }
+.case dd { margin: 0.4rem 0 0; font-size: 0.95rem; color: var(--muted); }
+.case .result { margin-top: 0.4rem; border-top: 1px solid var(--line); padding-top: 1.3rem; }
+.case .result dt {
+  background: linear-gradient(100deg, #60a5fa, #22d3ee);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.case .result dd { color: var(--heading); font-weight: 600; font-size: 1.05rem; }
+
+/* ─── CTA final ─── */
+.contact { text-align: center; }
+.contact-card {
+  position: relative; max-width: 46rem; margin-inline: auto;
+  border: 1px solid rgba(56,189,248,0.25); border-radius: 1.25rem;
+  padding: 3rem 2rem;
+  background:
+    radial-gradient(ellipse 70% 90% at 50% -20%, rgba(37,99,235,0.18), transparent 70%),
+    linear-gradient(180deg, var(--card-a), var(--card-b));
+}
+@media (min-width: 640px) { .contact-card { padding: 3.5rem 3.5rem; } }
+
+/* El mensaje precargado como burbuja de chat: anticipa la conversación */
+.bubble {
+  display: inline-block; margin-top: 1.8rem; max-width: 34rem;
+  background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25);
+  border-radius: 1.1rem 1.1rem 1.1rem 0.25rem;
+  padding: 1rem 1.4rem; font-size: 0.97rem; color: #d1fae5; text-align: left;
+}
+.contact .actions { margin-top: 2.2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem; }
+.contact .phone { margin-top: 1.4rem; font-size: 0.92rem; color: var(--muted); }
+.contact .phone a { color: var(--text); text-decoration: none; font-weight: 600; }
+.contact .phone a:hover { color: var(--sky); }
+
+/* ─── Footer ─── */
+.site-footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 2.5rem 0 7rem; }
+@media (min-width: 640px) { .site-footer { padding-bottom: 2.5rem; } }
+.site-footer .container { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+@media (min-width: 640px) { .site-footer .container { flex-direction: row; justify-content: space-between; } }
+.site-footer span, .site-footer a { font-size: 0.88rem; color: var(--muted); text-decoration: none; }
+.site-footer a:hover { color: var(--heading); }
+
+/* ─── Botón flotante de WhatsApp ─── */
+.float-wa {
+  position: fixed; bottom: 1.25rem; right: 1.25rem; z-index: 50;
+  display: flex; align-items: center; justify-content: center;
+  width: 3.5rem; height: 3.5rem; border-radius: 50%;
+  background: var(--wa); color: #fff;
+  box-shadow: 0 12px 32px -6px rgba(37,211,102,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.float-wa:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -6px rgba(37,211,102,0.55); }
+@media (min-width: 640px) { .float-wa { bottom: 2rem; right: 2rem; width: 4rem; height: 4rem; } }
+
+/* ─── Aparición sutil al hacer scroll ─── */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .btn-primary:hover, .float-wa:hover, .service:hover { transform: none; }
+}
+
+::selection { background: rgba(56,189,248,0.3); color: #f0f9ff; }
+</style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#main">Phool Campos</a>
+    <nav class="site-nav" aria-label="Principal">
+      <a class="nav-link" href="#servicios">Servicios</a>
+      <a class="nav-link" href="#casos">Casos</a>
+      <a class="nav-cta" href="https://wa.me/51957798468?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20automatizar%20un%20proceso%20en%20mi%20negocio" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Consultor en automatización y datos</p>
+
+        <h1>Convierto procesos manuales en <span class="accent">sistemas que trabajan solos.</span></h1>
+
+        <p class="subtitle">
+          Consultor en automatización y datos. Desarrollo soluciones con Python, bases de datos y APIs para empresas que quieren operar más rápido y con menos errores.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/51957798468?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20automatizar%20un%20proceso%20en%20mi%20negocio" target="_blank" rel="noopener noreferrer">
+            Escríbeme por WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        </div>
+
+        <ul class="stack" aria-label="Tecnologías y áreas de trabajo">
+          <li>Python</li>
+          <li>SQL · Bases de datos</li>
+          <li>APIs · Integraciones</li>
+          <li>ETL</li>
+          <li>Web scraping</li>
+          <li>Linux</li>
+          <li>Ciberseguridad</li>
+        </ul>
+      </div>
+
+      <div class="hero-photo">
+        <img src="foto-perfil.jpg" alt="Jhonn Phool Campos Garcia, consultor en automatización y datos" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SERVICIOS ══════════════ -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Servicios</p>
+        <h2>Lo que puedo automatizar por ti</h2>
+      </div>
+
+      <div class="services">
+        <article class="service reveal">
+          <div class="icon-chip" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
+          </div>
+          <h3>Automatización de procesos y reportes</h3>
+          <p>Elimino tareas repetitivas: reportes, consolidaciones y validaciones que hoy haces a mano pasan a ejecutarse solas, todos los días, sin errores.</p>
+        </article>
+
+        <article class="service reveal">
+          <div class="icon-chip" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Extracción de datos web (web scraping)</h3>
+          <p>Obtengo información de sitios web —precios de competidores, catálogos, directorios— y la entrego estructurada y lista para usar en tu negocio.</p>
+        </article>
+
+        <article class="service reveal">
+          <div class="icon-chip" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3>Bases de datos: diseño, consultas y optimización SQL</h3>
+          <p>Diseño y optimizo bases de datos para que tu información esté ordenada, segura y disponible al instante. Consultas lentas convertidas en respuestas inmediatas.</p>
+        </article>
+
+        <article class="service reveal">
+          <div class="icon-chip" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3>Integración de sistemas y APIs</h3>
+          <p>Conecto las herramientas que ya usas —Excel, sistemas internos, plataformas web— para que la información fluya sola entre ellas, sin copiar y pegar.</p>
+        </article>
+
+        <article class="service reveal">
+          <div class="icon-chip" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3>Tratamiento y consolidación de datos (ETL)</h3>
+          <p>Unifico datos dispersos en múltiples archivos y fuentes en una sola base confiable: sin duplicados, sin inconsistencias, lista para tomar decisiones.</p>
+        </article>
+
+        <article class="service reveal">
+          <div class="icon-chip" aria-hidden="true">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Mentoría 1-a-1 en Python y automatización</h3>
+          <p>Sesiones personalizadas por videollamada para que tú o tu equipo aprendan a automatizar su propio trabajo, desde cero y con casos reales.</p>
+        </article>
+      </div>
+
+      <div class="mid-cta reveal">
+        <p>¿Una tarea repetitiva te está quitando horas cada semana?</p>
+        <a href="https://wa.me/51957798468?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20automatizar%20un%20proceso%20en%20mi%20negocio" target="_blank" rel="noopener noreferrer">Cuéntamelo por WhatsApp →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CASOS ══════════════ -->
+  <section id="casos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Casos</p>
+        <h2>Resultados medibles, no promesas</h2>
+      </div>
+
+      <div class="cases">
+        <article class="case reveal">
+          <h3>Consolidación de reportes de inventario en cadena retail multinacional</h3>
+          <dl>
+            <div>
+              <dt>Problema</dt>
+              <dd>Reportes diarios armados manualmente desde múltiples fuentes, con alto riesgo de error.</dd>
+            </div>
+            <div>
+              <dt>Solución</dt>
+              <dd>Script en Python que consolida y valida la información automáticamente.</dd>
+            </div>
+            <div class="result">
+              <dt>Resultado</dt>
+              <dd>Un proceso que tomaba 2 horas diarias ahora se completa en 10 minutos.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="case reveal">
+          <h3>Monitoreo automático de operaciones con alertas por correo</h3>
+          <dl>
+            <div>
+              <dt>Problema</dt>
+              <dd>Las anomalías operativas podían tardar más de una hora en ser detectadas manualmente, generando respuestas tardías.</dd>
+            </div>
+            <div>
+              <dt>Solución</dt>
+              <dd>Scripts en Python que monitorean condiciones operativas de forma continua y envían alertas automáticas por correo ante cualquier incumplimiento.</dd>
+            </div>
+            <div class="result">
+              <dt>Resultado</dt>
+              <dd>Detección en tiempo real. El equipo pasó de reaccionar tarde a actuar en el momento.</dd>
+            </div>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CTA FINAL ══════════════ -->
+  <section id="contacto" class="section contact">
+    <div class="container">
+      <div class="contact-card reveal">
+        <p class="eyebrow">Contacto</p>
+
+        <p class="bubble">"Hola, vi tu web y quiero automatizar un proceso en mi negocio"</p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/51957798468?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20automatizar%20un%20proceso%20en%20mi%20negocio" target="_blank" rel="noopener noreferrer">
+            Escríbeme por WhatsApp
+          </a>
+          <!-- TODO LinkedIn y correo cuando existan:
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/TU-PERFIL" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn-ghost" href="mailto:TU-CORREO">Correo</a>
+          -->
+        </div>
+
+        <p class="phone">
+          <a href="https://wa.me/51957798468?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20automatizar%20un%20proceso%20en%20mi%20negocio" target="_blank" rel="noopener noreferrer">+51 957 798 468</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Jhonn Phool Campos Garcia</span>
+    <a href="https://wa.me/51957798468?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20automatizar%20un%20proceso%20en%20mi%20negocio" target="_blank" rel="noopener noreferrer">+51 957 798 468</a>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/51957798468?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20automatizar%20un%20proceso%20en%20mi%20negocio"
+   target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp al +51 957 798 468">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.885 3.4"/></svg>
+</a>
+
+<script>
+document.documentElement.classList.add('js');
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+}
+</script>
+
+</body>
+</html>
