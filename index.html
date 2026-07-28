@@ -185,13 +185,16 @@ a { color: inherit; }
     linear-gradient(to top, rgba(6,11,24,0.5), transparent 45%),
     rgba(37,99,235,0.12);
 }
+/* En móvil la foto va primero (order), a lo ancho y fundida hacia abajo
+   con el fondo, para que el titular arranque pegado a ella */
 @media (max-width: 899px) {
-  .hero-photo { min-height: 24rem; }
+  .hero-photo { order: -1; min-height: min(46vh, 26rem); }
   .hero-photo::after {
     background:
-      linear-gradient(to bottom, var(--bg), transparent 32%),
+      linear-gradient(to bottom, transparent 55%, var(--bg)),
       rgba(37,99,235,0.12);
   }
+  .hero-copy { padding-top: 1rem; }
 }
 
 /* ─── Secciones ─── */
