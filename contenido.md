@@ -10,13 +10,13 @@ Consultor en automatización y datos. Desarrollo soluciones con Python, bases de
    Elimino tareas repetitivas: reportes, consolidaciones y validaciones que hoy haces a mano pasan a ejecutarse solas, todos los días, sin errores.
 
 2. **Extracción de datos web (web scraping)**
-   Obtengo información de sitios web —precios de competidores, catálogos, directorios— y la entrego estructurada y lista para usar en tu negocio.
+   Obtengo información de sitios web (precios de competidores, catálogos, directorios) y la entrego estructurada y lista para usar en tu negocio.
 
 3. **Bases de datos: diseño, consultas y optimización SQL**
    Diseño y optimizo bases de datos para que tu información esté ordenada, segura y disponible al instante. Consultas lentas convertidas en respuestas inmediatas.
 
 4. **Integración de sistemas y APIs**
-   Conecto las herramientas que ya usas —Excel, sistemas internos, plataformas web— para que la información fluya sola entre ellas, sin copiar y pegar.
+   Conecto las herramientas que ya usas (Excel, sistemas internos, plataformas web) para que la información fluya sola entre ellas, sin copiar y pegar.
 
 5. **Tratamiento y consolidación de datos (ETL)**
    Unifico datos dispersos en múltiples archivos y fuentes en una sola base confiable: sin duplicados, sin inconsistencias, lista para tomar decisiones.
